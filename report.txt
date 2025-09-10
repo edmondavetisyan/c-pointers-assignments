@@ -1,0 +1,38 @@
+Assignment 1:
+
+
+	px stores the address of x (obtained via &x).
+
+	*px dereferences the pointer, giving direct access to the storage of x; writing to *px changes x.
+
+	Printing addresses uses %p and casts to (void*) by C convention.
+
+Assignment 2:
+	
+	Adding i to an int* advances by i * sizeof(int) bytes (compiler handles scaling), so (p + i) points at a[i].
+
+	Mutations through *(p + i) affect the underlying array memory; reading via a[i] reflects the same changes.
+
+	p++ advances one element at a time—not one byte; the type controls the step size.
+
+Assignment 3:
+
+	The function receives addresses to operate on caller-owned storage.
+
+	Dereferencing a and b gives lvalues that can be assigned, enabling in-place swap with no return value.
+
+	Passing by pointer is a C way to achieve effects similar to pass-by-reference.
+
+Assignment 4: 
+
+	pp stores the address of the pointer p. Dereferencing twice (**pp) reaches the int value.
+
+	Multi-level indirection is common in APIs that need to modify a pointer argument itself (e.g., allocate & assign).
+
+Assignment 5:
+
+	A C string is a contiguous char array ending with \0. The pointer advances by one char each iteration.
+
+	Using only pointer dereference *p avoids index notation entirely.
+
+	Because str is an array (not a string literal), it is modifiable; mutating through the pointer edits the same storage.
